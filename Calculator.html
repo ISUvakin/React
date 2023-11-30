@@ -1,0 +1,45 @@
+<html>
+<head>
+    <title>Калькулятор</title>
+    <script>
+        function updateInput(value) {
+            var input = document.getElementById("input");
+            input.value += value;
+        }
+
+        function calculate() {
+            var input = document.getElementById("input");
+            var result = eval(input.value);
+            var history = document.getElementById("history");
+            history.appendChild(document.createElement("div")).textContent = input.value + " = " + result;
+            input.value = result;
+        }
+    </script>
+</head>
+<body>
+    <h1>Калькулятор</h1>
+    <input type="text" id="input">
+    <br><br>
+    <button onclick="updateInput('1')">1</button>
+    <button onclick="updateInput('2')">2</button>
+    <button onclick="updateInput('3')">3</button>
+    <br>
+    <button onclick="updateInput('4')">4</button>
+    <button onclick="updateInput('5')">5</button>
+    <button onclick="updateInput('6')">6</button>
+    <br>
+    <button onclick="updateInput('7')">7</button>
+    <button onclick="updateInput('8')">8</button>
+    <button onclick="updateInput('9')">9</button>
+    <button onclick="updateInput('0')">0</button>
+    <br>
+    <button onclick="updateInput('+')">+</button>
+    <button onclick="updateInput('-')">-</button>
+    <button onclick="updateInput('*')">*</button>
+    <button onclick="updateInput('/')">/</button>
+    <button onclick="calculate()">=</button>
+    <br><br>
+    <h2>История операций</h2>
+    <div id="history"></div>
+</body>
+</html>
